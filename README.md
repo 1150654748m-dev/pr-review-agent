@@ -70,15 +70,39 @@ gh --version
 
 ## 测试案例
 
-### 测试1: claude-builders-bounty/claude-builders-bounty#1
+### 测试1: claude-builders-bounty#152 - PR Review Sub-Agent
 ```bash
-./claude-review --pr https://github.com/claude-builders-bounty/claude-builders-bounty/pull/1
+./claude-review --pr https://github.com/claude-builders-bounty/claude-builders-bounty/pull/152
 ```
 
-### 测试2: claude-builders-bounty/claude-builders-bounty#2
-```bash
-./claude-review --pr https://github.com/claude-builders-bounty/claude-builders-bounty/pull/2
+**输出示例**:
+```markdown
+## 🤖 PR Review Report
+
+**PR**: https://github.com/claude-builders-bounty/claude-builders-bounty/pull/152
+**标题**: [Bounty #4] Claude Code PR Review Sub-Agent
+**作者**: @plutuscontrol-ui
+
+### Summary
+此PR由 plutuscontrol-ui 提交，修改了 5 个文件，新增 706 行，删除 0 行。
+
+### Identified Risks
+- ⚠️ 变更量较大，建议分批次审查
+- ⚠️ 可能包含敏感信息（password/secret/api_key）
+
+### Improvement Suggestions
+- 💡 纯新增代码，建议确保有充分的测试覆盖
+
+### Confidence Score
+**Medium**
 ```
+
+### 测试2: claude-builders-bounty#153 - Safety Hook
+```bash
+./claude-review --pr https://github.com/claude-builders-bounty/claude-builders-bounty/pull/153 -o report.md
+```
+
+完整报告见: [test_report_153.md](test_report_153.md)
 
 ## 技术栈
 
